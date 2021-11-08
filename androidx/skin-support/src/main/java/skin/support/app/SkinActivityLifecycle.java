@@ -102,6 +102,8 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
 
     private void installLayoutFactory(Context context) {
         try {
+            // LayoutInflater 并非全局单例
+            // https://juejin.cn/post/6844903919286485000
             LayoutInflater layoutInflater = LayoutInflater.from(context);
             LayoutInflaterCompat.setFactory2(layoutInflater, getSkinDelegate(context));
         } catch (Throwable e) {
