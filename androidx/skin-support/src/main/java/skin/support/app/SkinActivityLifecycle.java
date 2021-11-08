@@ -46,6 +46,7 @@ public class SkinActivityLifecycle implements Application.ActivityLifecycleCallb
 
     private SkinActivityLifecycle(Application application) {
         application.registerActivityLifecycleCallbacks(this);
+        // 这个还是需要的：https://github.com/ximsfei/Android-skin-support/issues/167
         installLayoutFactory(application);
         SkinCompatManager.getInstance().addObserver(getObserver(application));
     }
